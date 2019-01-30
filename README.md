@@ -102,50 +102,50 @@ The following features were derived:
 
 Let us first look at our data and see how much Cats vs Dogs we have in our dataset.
 
-![Dist_PetType](../images/Dist_petType.png)
+![Dist_PetType](images/Dist_petType.png)
 
 The plot above shows we have around a 1000 more dogs in our training set.
 
 
-![Dist by Breed](../images/Dist_byBreed.png)
+![Dist by Breed](images/Dist_byBreed.png)
 
-![Dist_adoptspeed_x_pet](../images/Dist_adoptspeed_x_pet.png)
+![Dist_adoptspeed_x_pet](images/Dist_adoptspeed_x_pet.png)
 
 
 ### Let us look at our different features and see how it relates to our Target/Dependent Variable 'AdoptionSpeed'
 
-![heatmap](../images/heatmap.png)
+![heatmap](images/heatmap.png)
 
 
 The features in our correlation below, shows some correlation with the AdoptionSpeed, except for VideoAmt.  None of the features show a very strong correlation with our Dependent Variable - AdoptionSpeed.
 
-![corr map](../images/DF_corr.png)
+![corr map](images/DF_corr.png)
 
 Let us look at the features available and how it relates to the AdoptionSpeed of a pet.
 
 #### Fur Length vs. Adoption Speed
 - FurLength - Fur length (1 = Short, 2 = Medium, 3 = Long, 0 = Not Specified)
 
-![CatFurLen vs AdoptSpeed](../images/FurLen_x_AdoptSpeed.png)
+![CatFurLen vs AdoptSpeed](images/FurLen_x_AdoptSpeed.png)
 
 - It looks like fur length has little impact on the Adoption Speed of the pets, for cats there is a more distinct difference, showing faster adoption speed for cats with '1- Short' fur length.
 
 #### Age of Pet vs. Adoption Speed
-![AgeCat vs AdoptSpeed](../images/AgeCat_x_AdoptSpeed.png)
+![AgeCat vs AdoptSpeed](images/AgeCat_x_AdoptSpeed.png)
 
 - it looks like for dogs, puppies from 0-23 months are more popular in terms of adoptability.  Adoption speed for dogs 2 years - 6 years take longer.
 - for cats it does appear the same, where kittens from 0-11 months are adopted quicker.
 
 #### Name Length vs. Adoption Speed
 
-![Name Length vs. Adopt Speed](../images/NameLength.png)
+![Name Length vs. Adopt Speed](images/NameLength.png)
 
 - It looks like for cats, cats with longer names are more popular and adopted quicker, 
 whereas for dogs, dogs with Adoption Speed 0, appear to have shorter names, but the name length does not appear to have any impact for the other adoption speeds (1-4).
 
 #### Number of Colors Vs. Adoption Speed
 
-![Num Colors vs. AdoptSpeed](../images/numcolors.png)
+![Num Colors vs. AdoptSpeed](images/numcolors.png)
 
 - It looks like for dogs, those with two colors are adopted quicker compared to those with just one color.
 - For cats however, it does not show much difference between the number of color and adoption speed.
@@ -157,7 +157,7 @@ whereas for dogs, dogs with Adoption Speed 0, appear to have shorter names, but 
 - Sterilized - Pet has been spayed / neutered (1 = Yes, 2 = No, 3 = Not Sure)
 - Health - Health Condition (1 = Healthy, 2 = Minor Injury, 3 = Serious Injury, 0 = Not Specified)
 
-![Health vs.  Adoption Speed](../images/health.png)
+![Health vs.  Adoption Speed](images/health.png)
 
 - Oddly, the pets who are Vaccinated, Dewormed, Sterilized and Healthy appear to be adopted slower, which could mean that people who adopt is less concerned with these things, as long as pet is Healthy.  However, pets with 'Not Sure'
 '3_3_3_1' adoption speed is slower.
@@ -166,12 +166,12 @@ whereas for dogs, dogs with Adoption Speed 0, appear to have shorter names, but 
 
 - The plots below show us that a large population of the pets, looking at the dogs Age 0-23 months category belong to to the '2_2_2_1' health category.  For cats as well, a large population of cats < 12 months belong to this same '2_2_2_1' health category, which shows that people are not concerned with pets not being vaccinated, dewormed or sterilized.
 
-![Dog Health_Age](../images/Doghealth_x_Age.png)
+![Dog Health_Age](images/Doghealth_x_Age.png)
 
-![Cats health by AgeCat](../images/Catshealth_x_Age.png)
+![Cats health by AgeCat](images/Catshealth_x_Age.png)
 
 #### Number of Photos vs. Adoption Speed
-![PhotoAmt vs.  Adoption Speed](../images/PhotoAmt.png)
+![PhotoAmt vs.  Adoption Speed](images/PhotoAmt.png)
 
 - It looks like the number of photos has some effect on the Adoption Speed, pets with only one photo tends to get adopted longer, compared to those with more photos.  If I were to adopt a pet, i would like to be able to see more pictures myself, showcasing the personality of the pet to give some idea of how the pet would fit in my home.
 
@@ -183,7 +183,7 @@ Our Correlation table showed a very slight negative correlation between Descript
 
 - The plot below shows a very slight higher median for description length for Cats with AdoptionSpeed 0, but median value appears to be the same for all the rest.
 
-![DescLen vs AdoptionSpeed](../images/DescLenx_AdoptSpeed.png)
+![DescLen vs AdoptionSpeed](images/DescLenx_AdoptSpeed.png)
 
 The dataset provided by Kaggle, includes a Description Sentiment score which was ran through Google Cloud NLP API.
 
@@ -194,13 +194,13 @@ documentSentiment contains the overall sentiment of the document, which consists
 - __magnitude__: indicates the overall strength of emotion (both positive and negative) within the given text, between 0.0 and +inf. Unlike score, magnitude is not normalized; each expression of emotion within the text (both positive and negative) contributes to the text's magnitude (so longer text blocks may have greater magnitudes).
 
 #### Sentiment Magnitude vs. AdoptionSpeed
-![Description: Magnitude vs AdoptSpeed](../images/Desc_magnitude_x_AdoptSpeed.png)
+![Description: Magnitude vs AdoptSpeed](images/Desc_magnitude_x_AdoptSpeed.png)
 
 #### Sentiment Score vs. AdoptionSpeed
-![Description: Score vs AdoptSpeed](../images/Desc_score_x_AdoptSpeed.png)
+![Description: Score vs AdoptSpeed](images/Desc_score_x_AdoptSpeed.png)
 
 #### Score * Magnitude vs. Adoption Speed
-![Sentiment vs AdoptSpeed](../images/Sentiment_x_AdoptSpeed.png)
+![Sentiment vs AdoptSpeed](images/Sentiment_x_AdoptSpeed.png)
 
 - The correlation table showed us a slight positive correlation between the sentiment 'score' and AdoptionSpeed, and 'sentiment' field which was computed by multiplying the magnitude with the score, we can see this correlation in the plots above.  A higher sentiment value means a more positive sentiment.  It is quite surprising that we have a positive correlation with the Adoption Speed, which means higher sentiment takes longer for Adoption.
 
@@ -244,21 +244,21 @@ __accuracy_score__: 0.4155
 <br>__kappa Score__: 0.3639
 <br>__Kaggle Kappa Submission Score__: 0.231 (#1 Kaggle LB Score: 0.475)
 
-![VC Class Report](../images/VC_classreport.png)
+![VC Class Report](images/VC_classreport.png)
 
 ### Bagging Classifier with RandomForestClassifier
 __accuracy_score__: 0.4211
 <br>__kappa Score__: 0.3829
 <br>__Kaggle Kappa Submission Score__: 0.270 (#1 Kaggle LB Score: 0.475)
 
-![BC Class Report](../images/BC_classreport.png)
+![BC Class Report](images/BC_classreport.png)
 
 ### Gradient Boosting Classifier
 __accuracy_score__: 0.4175
 <br>__kappa Score__: 0.3916
 <br>__Kaggle Kappa Submission Score__: 0.257 (#1 Kaggle LB Score: 0.475)
 
-![GB Class Report](../images/GB_classreport.png)
+![GB Class Report](images/GB_classreport.png)
 
 
 We can see that even if the Gradient Boosting classifier model gave us the highest Kappa Score during evaluation,
@@ -286,14 +286,14 @@ __accuracy_score__: 0.4355
 <br>__kappa Score__: 0.4044
 <br>__Kaggle Kappa Submission Score__: 0.281 (#1 Kaggle LB Score: 0.475)
 
-![BC Class Report with meta](../images/BC_withmeta_classreport.png)
+![BC Class Report with meta](images/BC_withmeta_classreport.png)
 
 ### Gradient Boosting Classifier
 __accuracy_score__: 0.4199
 <br>__kappa Score__: 0.3904
 <br>__Kaggle Kappa Submission Score__: 0.222 (#1 Kaggle LB Score: 0.475)
 
-![GB Class Report](../images/GB_withmeta_classreport.png)
+![GB Class Report](images/GB_withmeta_classreport.png)
 
 
 
