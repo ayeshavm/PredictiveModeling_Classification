@@ -128,20 +128,20 @@ Let us look at the features available and how it relates to the AdoptionSpeed of
 
 ![CatFurLen vs AdoptSpeed](images/FurLen_x_AdoptSpeed.png)
 
-- It looks like fur length has little impact on the Adoption Speed of the pets, for cats there is a more distinct difference, showing faster adoption speed for cats with '1- Short' fur length.
+- It looks like fur length has little impact on the Adoption Speed of the pets, there is a little distinct difference, showing faster adoption speed for cats and dogs with '3- Long' fur length.
+
 
 #### Age of Pet vs. Adoption Speed
 ![AgeCat vs AdoptSpeed](images/AgeCat_x_AdoptSpeed.png)
 
-- it looks like for dogs, puppies from 0-23 months are more popular in terms of adoptability.  Adoption speed for dogs 2 years - 6 years take longer.
-- for cats it does appear the same, where kittens from 0-11 months are adopted quicker.
+- it seems like for dogs, there is no distinct relationship between the age of the dog, and the adoption speed.
+- for cats it appears that, kittens from 0-11 months are adopted quicker.
 
 #### Name Length vs. Adoption Speed
 
 ![Name Length vs. Adopt Speed](images/NameLength.png)
 
-- It looks like for cats, cats with longer names are more popular and adopted quicker, 
-whereas for dogs, dogs with Adoption Speed 0, appear to have shorter names, but the name length does not appear to have any impact for the other adoption speeds (1-4).
+- It looks like Pet Names do not have that impact on the AdoptionSpeed of pets.  Cats with longer names are just a little more popular and adopted quicker, but median values appear to be more or less the same for both Cats and Dogs.
 
 #### Number of Colors Vs. Adoption Speed
 
@@ -156,6 +156,8 @@ whereas for dogs, dogs with Adoption Speed 0, appear to have shorter names, but 
 - Dewormed - Pet has been dewormed (1 = Yes, 2 = No, 3 = Not Sure)
 - Sterilized - Pet has been spayed / neutered (1 = Yes, 2 = No, 3 = Not Sure)
 - Health - Health Condition (1 = Healthy, 2 = Minor Injury, 3 = Serious Injury, 0 = Not Specified)
+<br><br>
+__Let us look at the top 5 categories, where there are more than 500 pets in the category__
 
 ![Health vs.  Adoption Speed](images/health.png)
 
@@ -166,7 +168,13 @@ whereas for dogs, dogs with Adoption Speed 0, appear to have shorter names, but 
 
 - The plots below show us that a large population of the pets, looking at the dogs Age 0-23 months category belong to to the '2_2_2_1' health category.  For cats as well, a large population of cats < 12 months belong to this same '2_2_2_1' health category, which shows that people are not concerned with pets not being vaccinated, dewormed or sterilized.
 
+
+- It looks for dogs 72 months and older, it takes a longer time for them to be adopted if they are not vaccinated (2_1_2_1, and 2_2_2_1), but it does not seem to have an effect for puppies (0-23 months).
+
 ![Dog Health_Age](images/Doghealth_x_Age.png)
+
+- Vaccination / sterilization for kittens 0-5 months does not appear to be important for people who adopt, as seen in '1_1_2_1', '2_1_2_1' and '2_2_2_1'
+
 
 ![Cats health by AgeCat](images/Catshealth_x_Age.png)
 
@@ -238,6 +246,34 @@ $$\begin{equation*}
 ### Hyper-parameter Tuning and Model Evaluation:
 
 GridSearchCV was used to tune hyperparameters for the different models, and evaluated performance using Cross-validation.
+[Code Available here](https://github.com/ayeshavm/PredictiveModeling_Classification/blob/master/notebooks/02_PM_Petfinder_project_TrainModels.ipynb)
+
+### Features Used:
+
+- Type
+- Gender
+- Sentiment
+- Score
+- Color_count
+- Desc_Len
+- Name_Len
+- PhotoAmt
+- Quantity
+- Age
+- MaturitySize
+- FurLength
+- Sterilied
+- Dewormed
+- Vaccinated
+- Health
+- Fee
+- State
+- Name_Ind
+- Breed_Ind
+- Color1, Color2, Color3
+- Breed1
+- Breed2
+- age_cat
 
 ### Hard Voting Classification (with RandomForestClassifier, ExtraTreesClassifier, SVC)
 __accuracy_score__: 0.4155
@@ -280,6 +316,7 @@ If we look at the cross validation scores for the two models with cv=10, the Bag
 
 ## In an attempt to increase the current score... 
 the image metadata provided by Kaggle was processed to add features, re-tuned the Bagging Classifier and Gradient Boosting Classifier models, and gave us the following score -- it increased our previous score from 2.7 to 2.81! 
+[Code Available here](https://github.com/ayeshavm/PredictiveModeling_Classification/blob/master/notebooks/02_PM_Petfinder_project_TrainModels_withmeta.ipynb)
 
 ### Bagging Classifier with RandomForestClassifier
 __accuracy_score__: 0.4355
